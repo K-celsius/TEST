@@ -3,44 +3,43 @@ package Inlamningsuppgift;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class inlasningTest {
     @Test
-    public void testRäknaRader() {
-        inlasningRäknare räknare = new inlasningRäknare();
+    public void testRaknaRader() {
+        inlasningRaknare raknare = new inlasningRaknare();
         String text = "Rad 1 \n Rad 2 \n Rad 3 \n rad 4";
-        int antalRader = räknare.räknaRader(text);
+        int antalRader = raknare.raknaRader(text);
         assertEquals(4, antalRader, "Antalet rader borde vara 4");
     }
     @Test
-    public void räknaTecken(){
-        inlasningRäknare räknare = new inlasningRäknare();
+    public void raknaTecken(){
+        inlasningRaknare raknare = new inlasningRaknare();
         String text = "Detta kan du se \n sant";
-        int antalTecken = räknare.räknaTecken(text);
+        int antalTecken = raknare.raknaTecken(text);
         assertEquals(16,antalTecken,"Antalet borde vara 16");
     }
     @Test
-    public void räknaOrd(){
-        inlasningRäknare räknare = new inlasningRäknare();
+    public void raknaOrd(){
+        inlasningRaknare raknare = new inlasningRaknare();
         String text = "ett två tre fyra";
-        int antalOrd = räknare.räknaOrd(text);
+        int antalOrd = raknare.raknaOrd(text);
         assertEquals(4,antalOrd,"Antal ord borde vara 4");
     }
     @Test
-    public void angeLängstaord() {
-        inlasningRäknare räknare = new inlasningRäknare();
+    public void angeLangstaord() {
+        inlasningRaknare raknare = new inlasningRaknare();
         String text = "hypernervokustiskadiafragmakontravibrationer är längre än hicka";
-        List<String> längstaOrd = räknare.angeLängstaord(text);
-        assertEquals(Arrays.asList("hypernervokustiskadiafragmakontravibrationer"),längstaOrd,"hypernervokustiskadiafragmakontravibrationer");
+        List<String> langstaord = raknare.angeLangstaord(text);
+        assertEquals(List.of("hypernervokustiskadiafragmakontravibrationer"),langstaord,"hypernervokustiskadiafragmakontravibrationer");
     }@Test
     public void kontrolleraAvslut(){
-        inlasningRäknare räknare = new inlasningRäknare();
-        String rad ="kan man inte stoppa tid?\n \n";
-        boolean avgör =räknare.kontrolleraAvslut(rad);
-        assertEquals(false,avgör,"Borde vara False");
+        inlasningRaknare raknare = new inlasningRaknare();
+        String rad ="Stop";
+        boolean avgor = raknare.kontrolleraAvslut(rad);
+        assertTrue(avgor, "Borde vara true");
     }
 }
