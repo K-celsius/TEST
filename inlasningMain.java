@@ -31,12 +31,12 @@ public class inlasningMain {
 
 
     //Anropar kontrollräknare för att få fram önskad värde
-        inlasningRäknare see = new inlasningRäknare();
-        int antalRader = see.räknaRader(text.toString());
-        int antalTecken = see.räknaTecken(text.toString());
-        int antalOrd = see.räknaOrd(text.toString());
-        List<String> längstaOrd = see.angeLängstaord(text.toString());
-        boolean avgör = see.kontrolleraAvslut(rad.toString());
+        inlasningRaknare see = new inlasningRaknare();
+        int antalRader = see.raknaRader(text.toString());
+        int antalTecken = see.raknaTecken(text.toString());
+        int antalOrd = see.raknaOrd(text.toString());
+        List<String> angstaord = see.angeLangstaord(text.toString());
+        boolean avgor = see.kontrolleraAvslut(rad);
 
 
 
@@ -47,8 +47,8 @@ public class inlasningMain {
         System.out.println("Antal ord: " + antalOrd);
         System.out.println("Antal rader: " + antalRader);
         System.out.println("Antal tecken: " + antalTecken);
-        System.out.println("Längsta ordet är:" + längstaOrd );
-        System.out.println("stop användes : " + avgör);
+        System.out.println("Längsta ordet är:" + angstaord);
+        System.out.println("stop användes : " + avgor);
 
 
 
